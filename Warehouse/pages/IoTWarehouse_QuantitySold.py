@@ -26,7 +26,7 @@ def app():
     if st.button("Predict"):
         result=main(a,b,c)
         st.success('Predicted selling quantity for the day is {}kgs'.format(result))
-        df = pd.read_csv('ML-Warehouse\Warehouse\pages\Warehouse.csv')
+        df = pd.read_csv('/ML-Warehouse/Warehouse/pages/Warehouse.csv')
         avg_sold     = int(df['Sold'].iloc[0:364].mean())
         avg_sold_sun = int(df['Sold'].iloc[312:364].mean())
         avg_sold_mon = int(df['Sold'].iloc[0:52].mean())
@@ -97,7 +97,7 @@ def app():
     
 
 def main(a,b,c):
-    df = pd.read_csv('ML-Warehouse\Warehouse\pages\Warehouse.csv')
+    df = pd.read_csv('/ML-Warehouse/Warehouse/pages/Warehouse.csv')
     label_encoder = preprocessing.LabelEncoder()
     df['Day']= label_encoder.fit_transform(df['Day'])
     
