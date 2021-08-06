@@ -26,7 +26,7 @@ def app():
         st.success('Predicted price for the day is  ₹{}'.format(result))
 
 def main(i,j,k):
-    df = pd.read_csv('ML-Warehouse/Warehouse/pages/Warehouse.csv')
+    df = pd.read_csv('ML-Warehouse\Warehouse\pages\Warehouse.csv')
     label_encoder = preprocessing.LabelEncoder()
     df['Day']= label_encoder.fit_transform(df['Day'])
 
