@@ -11,7 +11,7 @@ import plotly.express as plt
 def app():
     st.title("_Smart Fruit Warehouse Control System_")
     st.write("### Understanding Data:")
-    df = pd.read_csv('/ML-Warehouse/Warehouse/pages/Warehouse.csv')
+    df = pd.read_csv('/ML-Warehouse/pages/Warehouse.csv')
 
     x_axis = st.selectbox(
         'Select X-axis:',
