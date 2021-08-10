@@ -1,9 +1,5 @@
 [theme]
-primaryColor=’#ff8500’
-backgroundColor=’#f9d7b1’
-secondaryBackgroundColor=’#e9af6f’
-font = ‘sans serif’
-[server]
-headless = true
-port = 
-enableCORS = false
+primaryColor='#ff8500'
+backgroundColor='#f9d7b1'
+secondaryBackgroundColor='#e9af6f'
+font = 'sans serif'
