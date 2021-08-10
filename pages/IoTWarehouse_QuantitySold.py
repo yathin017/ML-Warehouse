@@ -11,14 +11,15 @@ from pathlib import Path
 def app():
     st.title("_Smart Fruit Warehouse Control System_")
     html_temp = """
-    <div style="background-color:darkgrey;padding:10px;border-bottom-left-radius:50%;border-bottom-right-radius:50%;">
+    <div style="background-color:#E9AF6F;padding:10px;border-bottom-left-radius:50%;border-bottom-right-radius:50%;">
     <h1 style="color:black;text-align:center;">Selling Quantity Prediction</h1>
     </div>
     """
     st.markdown(html_temp,unsafe_allow_html=True)
     st.write("##")
     st.write("### Unique codes:")
-    st.write("#### Sunday -> 3, Monday -> 1, Tuesday -> 5, Wednesday -> 6, Thursday -> 4, Friday -> 0, Saturday -> 2")
+    st.write("#### Sunday -> 3, Monday -> 1, Tuesday -> 5, ")
+    st.write("#### Wednesday -> 6, Thursday -> 4, Friday -> 0, Saturday -> 2 ")
     st.write("##")
     a = st.number_input("Enter the unique code to select a day:", min_value=1, max_value=70, value=1, step=1)
     b = st.number_input("Enter price of the fruit:", min_value=1, max_value=70, value=1, step=1)
@@ -26,7 +27,7 @@ def app():
     result=""
     if st.button("Predict"):
         result=main(a,b,c)
-        st.success('Predicted selling quantity for the day is {}kgs'.format(result))
+        st.warning('Predicted selling quantity for the day is {}kgs'.format(result))
         df = pd.read_csv('Warehouse.csv')
         avg_sold     = int(df['Sold'].iloc[0:364].mean())
         avg_sold_sun = int(df['Sold'].iloc[312:364].mean())
